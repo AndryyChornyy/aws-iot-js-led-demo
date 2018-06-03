@@ -9,11 +9,12 @@ rpio.open(12, rpio.OUTPUT, rpio.LOW);
 
 //setup paths to certificates
 var device = awsIot.device({
-   keyPath: '../private.pem.key',
-  certPath: '../certificate.pem.crt',
-    caPath: '../caCert.crt',
+   keyPath: '../certs/private.pem.key',
+  certPath: '../certs/certificate.pem.crt',
+    caPath: '../certs/caCert.crt',
   clientId: 'MyThingName',
-    region: 'us-east-2'
+    region: 'us-east-2',
+   host: <YOUR_AWS_IOT_ENDPOINT>
 });
 
 device
